@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyyni3582cmjp"]
+
+[ext_resource type="Script" path="res://Mobs/Solider A.gd" id="1_hemwh"]
+[ext_resource type="Texture2D" uid="uid://hefcftm13cse" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile245.png" id="1_sij71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d15td"]
+radius = 20.0998
+
+[node name="Solider A" type="CharacterBody2D"]
+script = ExtResource("1_hemwh")
+
+[node name="TowerDefenseTile245" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_sij71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d15td")

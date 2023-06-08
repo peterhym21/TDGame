@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct0bi0o2tdx7"]
+
+[ext_resource type="Script" path="res://Towers/RedBullet.gd" id="1_8wojq"]
+[ext_resource type="Texture2D" uid="uid://dc7jao7iwwdtr" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile251.png" id="1_jj5xe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0ih8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlx2x"]
+radius = 12.0
+height = 38.0
+
+[node name="RedBullet" type="CharacterBody2D"]
+script = ExtResource("1_8wojq")
+
+[node name="TowerDefenseTile251" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_jj5xe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t0ih8")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_rlx2x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
