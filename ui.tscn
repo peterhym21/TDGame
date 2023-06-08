@@ -31,3 +31,12 @@ layout_mode = 2
 
 [node name="RedTowerPanel4" parent="Panel/FlowContainer" instance=ExtResource("1_784cm")]
 layout_mode = 2
+
+[node name="RedTowerPanel5" parent="Panel/FlowContainer" instance=ExtResource("1_784cm")]
+layout_mode = 2
+
+[node name="RedTowerPanel6" parent="Panel/FlowContainer" instance=ExtResource("1_784cm")]
+layout_mode = 2
+
+[node name="RedTowerPanel7" parent="Panel/FlowContainer" instance=ExtResource("1_784cm")]
+layout_mode = 2

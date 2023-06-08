@@ -8,14 +8,14 @@ func _on_gui_input(event):
 	if event is InputEventMouseButton and event.button_mask == 1:
 		#left click down
 		add_child(tempTower)
-		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
+		tempTower.global_position = event.global_position
+		#tempTower.process_mode = Node.PROCESS_MODE_DISABLED
 		tempTower.scale = Vector2(0.32,0.32)
 	
 	elif event is InputEventMouseMotion and event.button_mask == 1:
 		#left click down drag
 		if get_child_count() > 1:
 			get_child(1).global_position = event.global_position
-			print(event)
 	
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		#left click up
