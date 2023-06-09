@@ -23,11 +23,11 @@ func _on_gui_input(event):
 			#var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 			if (currTile == Vector2i(4,5)):
 				#if (targets.size() > 1):
-					get_child(1).get_node("Area").modulate = Color(255,0,0)
+					get_child(1).get_node("Area").modulate = Color(255, 0, 0, 0.3)
 				#else:
-					get_child(1).get_node("Area").modulate = Color(0,255,0)
+					get_child(1).get_node("Area").modulate = Color(0 ,255 ,0, 0.3)
 			else:
-				get_child(1).get_node("Area").modulate = Color(255,0,0)
+				get_child(1).get_node("Area").modulate = Color(255 ,0 ,0, 0.3)
 	
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		#left click up
