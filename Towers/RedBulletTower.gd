@@ -22,8 +22,8 @@ func _on_tower_body_entered(body):
 		for i in currTargets:
 			if "Solider" in i.name:
 				tempArry.append(i)
+		
 		var currTarget = null
-
 		for i in tempArry:
 			if currTarget == null:
 				currTarget = i.get_node("../")
