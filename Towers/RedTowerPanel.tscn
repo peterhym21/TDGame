@@ -5,8 +5,15 @@
 
 [node name="RedTowerPanel" type="Panel"]
 custom_minimum_size = Vector2(80, 80)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.021
+anchor_right = 0.011
+anchor_bottom = 0.021
+offset_left = -39.424
+offset_top = -43.008
+offset_right = 0.575996
+offset_bottom = -3.008
 script = ExtResource("1_52ms4")
 
 [node name="TowerDefenseTile250" type="Sprite2D" parent="."]

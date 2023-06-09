@@ -21,6 +21,7 @@ window/size/viewport_width=3584
 window/size/viewport_height=2048
 window/size/mode=2
 window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [dotnet]
 

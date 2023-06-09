@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c66660stylodj"]
+[gd_scene load_steps=11 format=3 uid="uid://c66660stylodj"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_nlo2b"]
 [ext_resource type="Texture2D" uid="uid://cvle8rr2ab6gm" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="1_uove4"]
@@ -16,7 +16,62 @@ corner_radius_top_right = 450
 corner_radius_bottom_right = 450
 corner_radius_bottom_left = 450
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbplr"]
+bg_color = Color(0, 0.0666667, 0.113725, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.192157, 0.396078, 0.858824, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gxfc"]
+bg_color = Color(0.282353, 0.407843, 1, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0, 0.905882, 0.972549, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_110bb"]
+bg_color = Color(0, 0.647059, 0.905882, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.647059, 0.819608, 1, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e14m"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.984314, 0.435294, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mj0qc"]
+
 [node name="RedBulletTower" type="StaticBody2D"]
+input_pickable = true
 script = ExtResource("1_nlo2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -45,5 +100,76 @@ offset_right = 448.0
 offset_bottom = 448.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jdre2")
 
+[node name="Upgrade" type="Node" parent="."]
+
+[node name="Upgrade" type="Panel" parent="Upgrade"]
+offset_left = -574.0
+offset_top = 81.0
+offset_right = 2.0
+offset_bottom = 273.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_jbplr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Upgrade/Upgrade"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 11.5
+offset_right = 576.0
+offset_bottom = 136.5
+theme_override_constants/separation = 69
+alignment = 1
+
+[node name="Range" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gxfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_110bb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2e14m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mj0qc")
+
+[node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Range"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 129.0
+offset_right = 115.0
+offset_bottom = 158.0
+text = "1000"
+horizontal_alignment = 1
+
+[node name="AttackSpeed" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gxfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_110bb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2e14m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mj0qc")
+
+[node name="Label2" type="Label" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 129.5
+offset_right = 116.0
+offset_bottom = 158.5
+text = "1000"
+horizontal_alignment = 1
+
+[node name="Power" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gxfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_110bb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2e14m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mj0qc")
+
+[node name="Label3" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Power"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 130.0
+offset_right = 119.0
+offset_bottom = 159.0
+text = "1000"
+horizontal_alignment = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
