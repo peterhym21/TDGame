@@ -1,13 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyyni3582cmjp"]
+[gd_scene load_steps=7 format=3 uid="uid://cyyni3582cmjp"]
 
 [ext_resource type="Script" path="res://Mobs/Solider A.gd" id="1_hemwh"]
 [ext_resource type="Texture2D" uid="uid://hefcftm13cse" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile245.png" id="1_sij71"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo115"]
+bg_color = Color(1, 0.176471, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypwkk"]
+bg_color = Color(0, 0.721569, 0.309804, 1)
+
+[sub_resource type="GDScript" id="GDScript_38ino"]
+script/source = "extends ProgressBar
+
+func _ready():
+	self.max_value = get_parent().Health
+	
+
+func _process(delta):
+	self.value = get_parent().Health
+
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d15td"]
 radius = 20.0998
 
 [node name="Solider A" type="CharacterBody2D"]
 script = ExtResource("1_hemwh")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -53.0
+offset_right = 64.0
+offset_bottom = -43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qo115")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ypwkk")
+value = 50.0
+show_percentage = false
+script = SubResource("GDScript_38ino")
 
 [node name="TowerDefenseTile245" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

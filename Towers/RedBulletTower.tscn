@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c66660stylodj"]
+[gd_scene load_steps=19 format=3 uid="uid://c66660stylodj"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_nlo2b"]
 [ext_resource type="Texture2D" uid="uid://cvle8rr2ab6gm" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="1_uove4"]
@@ -26,6 +26,9 @@ func _draw():
 	var col = Color(0, 255, 0, 0.3)
 	draw_circle(cen, rad, col)
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt6ck"]
+size = Vector2(128, 100)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdre2"]
 bg_color = Color(0.788235, 0.172549, 0.172549, 1)
@@ -124,6 +127,14 @@ texture = ExtResource("1_uove4")
 shape = SubResource("CircleShape2D_la5ca")
 script = SubResource("GDScript_gxuf8")
 
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerDetector"]
+shape = SubResource("RectangleShape2D_dt6ck")
+
 [node name="BulletContainer" type="Node" parent="."]
 
 [node name="Area" type="Panel" parent="."]
@@ -137,6 +148,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jdre2")
 [node name="Upgrade" type="Node" parent="."]
 
 [node name="Upgrade" type="Panel" parent="Upgrade"]
+visible = false
 offset_left = -574.0
 offset_top = 81.0
 offset_right = 2.0
