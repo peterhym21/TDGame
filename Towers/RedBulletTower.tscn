@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c66660stylodj"]
+[gd_scene load_steps=20 format=3 uid="uid://c66660stylodj"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_nlo2b"]
 [ext_resource type="Texture2D" uid="uid://cvle8rr2ab6gm" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="1_uove4"]
 [ext_resource type="Texture2D" uid="uid://b6q5bqnqwnnd7" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile110.png" id="3_l4fn3"]
 [ext_resource type="Texture2D" uid="uid://bvv3rvfq4t1sn" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile297.png" id="4_8vcf0"]
+[ext_resource type="Texture2D" uid="uid://sloeeyvhv1sb" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile272.png" id="4_vebta"]
 [ext_resource type="Texture2D" uid="uid://cqit85v307nlr" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile296.png" id="5_wp4yq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avcgh"]
@@ -186,6 +187,19 @@ horizontal_alignment = 1
 position = Vector2(63, 63)
 texture = ExtResource("3_l4fn3")
 
+[node name="Label2" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Range"]
+offset_left = 79.5
+offset_top = 103.0
+offset_right = 105.5
+offset_bottom = 130.0
+text = "10
+"
+
+[node name="TowerDefenseTile272" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Range"]
+position = Vector2(106.5, 115)
+scale = Vector2(0.7375, 0.75)
+texture = ExtResource("4_vebta")
+
 [node name="AttackSpeed" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
@@ -207,6 +221,19 @@ horizontal_alignment = 1
 position = Vector2(63, 63)
 texture = ExtResource("4_8vcf0")
 
+[node name="Label2" type="Label" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed"]
+offset_left = 79.5
+offset_top = 103.0
+offset_right = 105.5
+offset_bottom = 130.0
+text = "10
+"
+
+[node name="TowerDefenseTile272" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed"]
+position = Vector2(106.5, 115)
+scale = Vector2(0.7375, 0.75)
+texture = ExtResource("4_vebta")
+
 [node name="Power" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
@@ -227,6 +254,19 @@ horizontal_alignment = 1
 [node name="TowerDefenseTile296" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Power"]
 position = Vector2(63, 63)
 texture = ExtResource("5_wp4yq")
+
+[node name="Label2" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Power"]
+offset_left = 79.5
+offset_top = 103.0
+offset_right = 105.5
+offset_bottom = 130.0
+text = "10
+"
+
+[node name="TowerDefenseTile272" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Power"]
+position = Vector2(106.5, 115)
+scale = Vector2(0.7375, 0.75)
+texture = ExtResource("4_vebta")
 
 [node name="ProgressBar" type="ProgressBar" parent="Upgrade"]
 offset_left = -64.0
